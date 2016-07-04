@@ -6,26 +6,22 @@ $(function() {
 			return $(this).attr("src").replace(".svg", ".png");
 		});
 	};
-
-	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
+	
+	$("form").submit(function() {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "mail.php", 
 			data: th.serialize()
 		}).done(function() {
 			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
+			setTimeout(function() {				
 				th.trigger("reset");
 			}, 1000);
 		});
 		return false;
 	});
-
-	//Chrome Smooth Scroll
+	
 	try {
 		$.browserSelector();
 		if($("html").hasClass("chrome")) {
@@ -36,5 +32,18 @@ $(function() {
 	};
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
+
+	$('.autoriz a').click(function(event) {
+		event.preventDefault();
+		var t        = $(this),
+			dataForm = t.data('form'),
+			parrent  = t.parents('.autoriz');
+
+		$('.autoriz a').not(t).removeClass('active');
+		t.toggleClass('active');
+
+		parrent.find('form').not('#'+dataForm).removeClass('active');
+		$('#'+dataForm).toggleClass('active');		
+	});
 
 });

@@ -14,11 +14,20 @@ body
 
 .hidden
 	display: none
-
+.clrp
+	padding: 0
+.label
+	display: inline-block			
+	font-size: 12px
+	line-height: 14px
+	padding-top: 13px
+	color: $textColor
+	text-align: left
+	margin-bottom: 5px
 a
 	&:hover
 		text-decoration: none
-		color: $blak
+		color: $black
 
 h1,h2,h3,h4,h5,h6
 	font-family: "OpenSansBold",sans-serif
@@ -31,4 +40,155 @@ h1,h2,h3,h4,h5,h6,ul
 input,textarea,button
 	outline: none
 	border: none
+.header-wrap
+	min-height: 400px
+	background-repeat: no-repeat
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: 50% 75px
+
+nav.register
+	height: 80px
+	background-color: $white
+	box-shadow: 1px 1px 3px #666
+	position: fixed
+	width: 100%
+	top: 0
+	left: 0
+	z-index: 1000
+	.logo
+		a
+			vertical-align: middle
+			display: inline-block			
+			font-size: 12px
+			line-height: 14px
+			padding-top: 13px
+			color: $textColor
+			&:nth-child(2)
+				width: 250px
+				padding-left: 10px
+				&:hover
+					text-decoration: underline
+
+nav.navigation
+	ul		
+		border-top: 1px solid $mainB
+		font-size: 0
+		li
+			display: inline-block
+			&.active
+				a
+					background-color: $mainB
+					color: $white
+					&:before
+						width: 100%
+			a
+				display: block
+				font-size: 16px
+				line-height: 45px
+				padding: 0 15px
+				color: $black				
+				position: relative
+				&:before
+					position: absolute
+					content: ''
+					width: 0
+					height: 2px
+					background-color: $mainB
+					top: 0
+					left: 0
+					transition: width 0.3s
+				&:hover:before
+					width: 100%
+					
+
+
+
+.autoriz
+	text-align: right
+	position: relative
+	form
+		position: absolute
+		top: 95px
+		right: -600px
+		width: 300px
+		background-color: $white
+		box-shadow: 1px 1px 3px #666
+		transition:  right 0.5s
+		&.active			
+			right: 0		
+	ul
+		font-size: 0
+		li
+			display: inline-block			
+			position: relative
+			&:first-child
+				&:before
+					position: absolute
+					content: ''
+					width: 1px
+					height: 40px
+					top: 20px
+					left: 0px
+					background-color: $textColor
+			&:last-child
+				&:before
+					position: absolute
+					content: ''
+					width: 1px
+					height: 40px
+					top: 20px
+					right: 0px
+					background-color: $textColor
+			a
+				font-size: 16px
+				display: block
+				line-height: 80px
+				width: 130px
+				text-align: center
+				transition: all 0.3s
+				color: $black
+				position: relative
+				&.active
+					background-color: $mainR
+					color: $white
+					&:before
+						position: absolute
+						content: ''
+						bottom: -14px
+						left: 50%
+						margin-left: -7px
+						width: 0
+						height: 0
+						border-style: solid
+						border-width: 14px 14px 0 14px
+						border-color: $mainR transparent transparent transparent
+				&:hover
+					background-color: $mainR
+					color: $white
+			
+
+
+.filters
+	background-color: $mainB
+	min-height: 150px
+	h3
+		font-size: 16px
+		// text-transform: uppercase
+		color: $white
+		font-family: 'RobotoRegular'
+		font-weight: 100
+		margin: 15px 0 5px
+	label
+		color: $white
+	.form-group
+		span
+			color: $white
+			line-height: 30px
+			margin-left: 10px
+			display: inline-block
+			vertical-align: top
+
+
+
 

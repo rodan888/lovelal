@@ -5,37 +5,181 @@
 
 	<meta charset="utf-8">
 
-	<title>Заголовок</title>
+	<title>Lovelal</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="path/to/image.jpg">
 
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	
 
 	
 	<!-- Load CSS Start -->
 	<link rel="stylesheet" href="css/vendor.min.css">
-	<link rel="stylesheet" href="css/_header.min.css">
-	<link rel="stylesheet" href="css/_main.min.css">
+	<link rel="stylesheet" href="css/header.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
 	<!-- Load CSS End -->
 
 
 </head>
 
 <body>
+	<header>
+		<div class="header-wrap" style="background-image: url('img/topImage.jpg')">
+			<nav class="register">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-5 logo">
+							<a href="/">
+								<img src="img/logo.png" alt="lovelal">
+							</a>
+							<a href="#">
+								Уникальная социальная площадка для людей, которым не подходят обычные сайты знакомств
+							</a>							
+						</div>
+						<div class="col-sm-7 autoriz">
+							<ul>
+								<li>
+									<a href="#" data-form="signIn">
+										<i class="fa fa-sign-in"></i> Вход
+									</a>									
+								</li>
+								<li>
+									<a href="#" data-form="register">
+										<i class="fa fa-user"></i> Регистрация
+									</a>
+								</li>
+							</ul>
+							<form id="signIn">
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">E-mail</label>
+								</div>
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">Пароль</label>
+								</div>
+								<button type="submit">Войти</button>
+							</form>
+
+							<form id="register">
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">E-mail</label>
+								</div>
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">Пароль</label>
+								</div>
+								<span class="label">
+									Введенный Вами пароль будет выслан Вам на эл. почту. <br>
+									Если Вы не введете пароль, то сайт автоматически сгенерирует для Вас надежный пароль.
+								</span>
+								<button type="submit">Зарегистрироваться</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<nav class="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">						
+						<ul>
+							<li class="active"><a href="#">Знакомства</a></li>
+							<li><a href="#">Полезно</a></li>
+							<li><a href="#">Статьи</a></li>
+							<li><a href="#">О проекте</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<form class="filters">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<h3>Выберите пол</h3>
+						<div class="form-group">
+            	<input type="radio" value="1" id="man" name="gender">
+            	<label for="man"></label>
+            	<span><i class="fa fa-male"></i> Мужчины</span>
+            </div>
+            <div class="form-group">
+            	<input type="radio" value="0" id="voman" name="gender" checked="checked">
+            	<label for="voman"></label>
+            	<span><i class="fa fa-female"></i> Женщины</span>
+        		</div>
+					</div>
+					<div class="col-md-3">
+						<h3>Выберите регион</h3>
+						<div class="form-group">
+							<select name="country" id="country">
+								<option value="0">Любая страна</option>
+								<option value="1">Австралия</option>
+								<option value="110">Австрия</option>
+								<option value="4">Азербайджан</option>
+								<option value="159">Багамы</option>
+								<option value="7">Бангладеш</option>
+								<option value="101">Барбадос</option>
+								<option value="8">Бахрейн</option>
+								<option value="113">Беларусь</option>
+								<option value="160">Белиз</option>
+								<option value="114">Бельгия</option>
+								<option value="52">Бенин</option>
+								<option value="115">Болгария</option>
+								<option value="168">Боливия</option>                 
+							</select>
+						</div>
+						<div class="form-group">
+							<select name="region" id="region">
+								<option value="0">Любай регион</option>
+								<option value="1">Австралия</option>
+								<option value="110">Австрия</option>
+								<option value="4">Азербайджан</option>
+								<option value="159">Багамы</option>
+								<option value="7">Бангладеш</option>
+								<option value="101">Барбадос</option>
+								<option value="8">Бахрейн</option>
+								<option value="113">Беларусь</option>
+								<option value="160">Белиз</option>
+								<option value="114">Бельгия</option>
+								<option value="52">Бенин</option>
+								<option value="115">Болгария</option>
+								<option value="168">Боливия</option>                 
+							</select>
+						</div>
+						<div class="form-group">
+							<select name="city" id="city">
+								<option value="0">Любой город</option>
+								<option value="1">Австралия</option>
+								<option value="110">Австрия</option>
+								<option value="4">Азербайджан</option>
+								<option value="159">Багамы</option>
+								<option value="7">Бангладеш</option>
+								<option value="101">Барбадос</option>
+								<option value="8">Бахрейн</option>
+								<option value="113">Беларусь</option>
+								<option value="160">Белиз</option>
+								<option value="114">Бельгия</option>
+								<option value="52">Бенин</option>
+								<option value="115">Болгария</option>
+								<option value="168">Боливия</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</header>
 
 	<!-- Здесь пишем код -->	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<h1>Hello world!</h1>
-				<i class="fa fa-cog"></i>
-				<a href="#">link</a>
+			<div class="col-md-12">				
 			</div>
 		</div>
 	</div>
