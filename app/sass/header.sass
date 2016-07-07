@@ -1,8 +1,27 @@
 @import "bourbon"
 @import "_vars.sass"
+@import "_mixins.sass"
 
 +font-face("RobotoRegular", "../fonts/RobotoRegular/RobotoRegular", $file-formats: eot woff ttf)
 +font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf)
+
+%extend_before
+	position: absolute
+	content: ''
+	width: 1px
+	height: 50%
+	top: 25%
+	right: 0px
+	background-color: $textColor
+
+%extend_first	
+	position: absolute
+	content: ''
+	width: 1px
+	height: 50%
+	top: 25%
+	left: 0px
+	background-color: $textColor
 
 body
 	font-size: 16px
@@ -11,11 +30,14 @@ body
 	line-height: 1.6
 	font-family: "RobotoRegular", sans-serif
 	overflow-x: hidden
+	padding-bottom: 170px
 
 .hidden
 	display: none
 .clrp
 	padding: 0
+.center
+	text-align: center
 .label
 	display: inline-block			
 	font-size: 12px
@@ -29,6 +51,23 @@ a
 		text-decoration: none
 		color: $black
 
+.img-wrap
+	position: relative
+	height: 320px
+	overflow: hidden	
+	&.small
+		img
+			width: 100%
+	img
+		position: absolute
+		top: 50%
+		left: 50%
+		min-height: 100%
+		@include transform(translate(-50%,-50%))
+		@include transition(transform 0.8s)
+		&:hover
+			@include transform(translate(-50%,-50%) scale(1.2))
+
 h1,h2,h3,h4,h5,h6
 	font-family: "OpenSansBold",sans-serif
 
@@ -41,7 +80,7 @@ input,textarea,button
 	outline: none
 	border: none
 .header-wrap
-	min-height: 400px
+	min-height: 80px	
 	background-repeat: no-repeat
 	background-size: contain
 	background-repeat: no-repeat
@@ -56,32 +95,37 @@ nav.register
 	top: 0
 	left: 0
 	z-index: 1000
-	.logo
-		a
-			vertical-align: middle
-			display: inline-block			
-			font-size: 12px
-			line-height: 14px
-			padding-top: 13px
-			color: $textColor
-			&:nth-child(2)
-				width: 250px
-				padding-left: 10px
-				&:hover
-					text-decoration: underline
+.logo
+	a
+		vertical-align: middle
+		display: inline-block			
+		font-size: 12px
+		line-height: 14px
+		padding-top: 13px
+		color: $textColor
+		&:nth-child(2)
+			width: 250px
+			padding-left: 10px
+			&:hover
+				text-decoration: underline
 
 nav.navigation
+	.container
+		border-top: 1px solid $mainR		
 	ul		
-		border-top: 1px solid $mainB
 		font-size: 0
 		li
 			display: inline-block
 			&.active
 				a
-					background-color: $mainB
+					background-color: $mainR
 					color: $white
 					&:before
 						width: 100%
+			&:first-child
+				position: relative
+				&:before
+					@extend %extend_first
 			a
 				display: block
 				font-size: 16px
@@ -94,12 +138,42 @@ nav.navigation
 					content: ''
 					width: 0
 					height: 2px
-					background-color: $mainB
-					top: 0
+					background-color: $mainR
+					bottom: 0
 					left: 0
 					transition: width 0.3s
 				&:hover:before
 					width: 100%
+				&:after
+					@extend %extend_before
+	.search
+		text-align: right
+		button
+			font-size: 16px
+			line-height: 45px
+			padding: 0 15px
+			color: $black				
+			position: relative
+			background-color: transparent
+			i
+				margin-right: 5px
+			&.active
+				background-color: $mainR		
+				color: $white
+			&:before
+				position: absolute
+				content: ''
+				width: 0
+				height: 2px
+				background-color: $mainR
+				bottom: 0
+				left: 0
+				transition: width 0.3s
+			&:hover:before
+				width: 100%
+			&:after
+				@extend %extend_before
+
 					
 
 
@@ -124,22 +198,10 @@ nav.navigation
 			position: relative
 			&:first-child
 				&:before
-					position: absolute
-					content: ''
-					width: 1px
-					height: 40px
-					top: 20px
-					left: 0px
-					background-color: $textColor
+					@extend %extend_first
 			&:last-child
 				&:before
-					position: absolute
-					content: ''
-					width: 1px
-					height: 40px
-					top: 20px
-					right: 0px
-					background-color: $textColor
+					@extend %extend_before
 			a
 				font-size: 16px
 				display: block
@@ -149,6 +211,17 @@ nav.navigation
 				transition: all 0.3s
 				color: $black
 				position: relative
+				&:after
+					position: absolute
+					content: ''
+					width: 0
+					height: 2px
+					background-color: $mainR
+					bottom: 0
+					left: 0
+					transition: width 0.3s
+				&:hover:after
+					width: 100%
 				&.active
 					background-color: $mainR
 					color: $white
@@ -163,31 +236,43 @@ nav.navigation
 						border-style: solid
 						border-width: 14px 14px 0 14px
 						border-color: $mainR transparent transparent transparent
-				&:hover
-					background-color: $mainR
-					color: $white
-			
-
-
-.filters
-	background-color: $mainB
-	min-height: 150px
-	h3
-		font-size: 16px
-		// text-transform: uppercase
-		color: $white
-		font-family: 'RobotoRegular'
-		font-weight: 100
-		margin: 15px 0 5px
-	label
-		color: $white
-	.form-group
-		span
-			color: $white
-			line-height: 30px
-			margin-left: 10px
-			display: inline-block
-			vertical-align: top
+				
+.menu-wrap
+	position: relative
+	// margin-bottom: 40px
+	.filters
+		background-color: $white
+		min-height: 150px
+		position: absolute
+		top: 146px
+		left: 0
+		width: 100%
+		opacity: 0
+		transition: all 0.5s
+		height: 300px
+		padding: 0
+		box-shadow: 0px 2px 2px #666
+		&.active
+			top: 46px
+			opacity: 1
+			height: 250px
+			z-index: 1000
+		h3
+			font-size: 16px
+			// text-transform: uppercase
+			color: $textColor
+			font-family: 'RobotoRegular'
+			font-weight: 100
+			margin: 15px 0 5px
+		label
+			color: $textColor
+		.form-group
+			span
+				color: $textColor
+				line-height: 30px
+				margin-left: 10px
+				display: inline-block
+				vertical-align: top
 
 
 

@@ -26,6 +26,223 @@ body textarea:required:valid
 	color: #666
 
 //Custom Styles Here
+.title
+	font-family: 'RobotoRegular'
+	font-weight: 100
+	font-size: 35px
+	margin: 20px 0 40px 0
+	padding-left: 10px
+	position: relative
+	&:before
+		position: absolute
+		content: ''
+		width: 1px
+		height: 70px
+		top: 0
+		left: 0
+		background-color: $black
+.card
+	height: 320px	
+	position: relative
+	overflow: hidden
+	margin: 5px -10px
+	&:hover .card-image			
+		img
+			-webkit-filter: blur(2px)				
+			transform: translateX(-50%) translateY(-55%)
+	.card-image
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		img
+			position: absolute
+			top: 50%
+			left: 50%			
+			min-height: 100%
+			transform: translate(-50%,-50%)
+			transition: all 0.3s
+	&:hover .card-info
+		bottom: 45px
+		.description
+			margin-bottom: 10px
+	.card-info
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		z-index: 10
+		padding: 0 10px
+		transition: bottom 0.3s
+		&:before
+			position: absolute
+			content: ''
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: -1			
+			@include background-image(linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.7) 100%))
+		.card-name
+			color: $white
+			font-size: 28px
+			position: relative
+			line-height: 30px
+			letter-spacing: 1px
+			font-family: 'RobotoRegular'
+			font-weight: 100
+			&:before
+				position: absolute
+				content: ''
+				left: 0px
+				bottom: -6px
+				width: 50px
+				height: 2px
+				background-color: $mainR
+		.card-about
+			display: block
+			font-size: 12px
+			margin-top: 10px
+			color: $white
+		.description
+			font-size: 12px
+			color: $white
+			margin-bottom: -45px
+			transition: margin 0.3s
+
+
+	.card-follow
+		position: absolute
+		width: 100%
+		height: 45px
+		line-height: 45px
+		text-transform: uppercase
+		color: $white
+		background-color: $mainR
+		text-align: center
+		bottom: -45px
+		left: 0
+		border-bottom-left-radius: 5px
+		border-bottom-right-radius: 5px
+		transition: bottom 0.3s
+	&:hover .card-follow
+		bottom: 0
+
+
+.pagination 
+	&.light
+		ul.pagination			
+			font-size: 0
+			li
+				border-bottom: 1px solid $mainR
+				&.control
+					border: none
+					&:hover
+						a
+							box-shadow: none
+				&.active,&:hover
+					a	
+						border: none	
+						box-shadow: inset 0px -3px 0px $mainR
+				a
+					border: none	
+					font-size: 16px
+	ul.pagination
+		margin-top: 20px
+		text-align: center		
+		li
+			display: inline-block			
+			a
+				line-height: 45px
+				width: 45px
+				background-color: $white
+				border: 1px solid $gray
+				display: block
+				text-align: center
+				color: $textColor				
+				transition: all 0.3s
+			&.active,&:hover
+				a
+					border: 1px solid $mainR
+					color: $mainR
+.profile-wrap
+	position: relative
+	padding-bottom: 100px
+	min-height: 320px
+	.popup-slider
+		position: absolute
+		bottom: 0
+		left: 0
+		.popup-item
+			display: inline-block
+			width: 80px
+			height: 80px
+			vertical-align: top
+			overflow: hidden		
+			img
+				height: 100%
+
+
+
+
+
+
+footer 
+	background-color: $mainB
+	min-height: 50px	
+	color: $white		
+	position: absolute
+	margin-top: 40px
+	bottom: 0
+	left: 0
+	width: 100%
+	.bottom-nav 
+		background: #3ba6d6
+		position: absolute
+		width: 100%
+		bottom: 50px
+		padding-bottom: 12px
+		a
+			color: $white
+		.nav		
+			text-align: right
+			li
+				margin-top: 10px
+				margin-right: 15px
+				display: inline-block
+				a
+					display: block
+					line-height: 52px
+					&:hover
+						text-decoration: underline
+	.copy 
+		position: absolute
+		min-height: 50px
+		bottom: 0
+		left: 0
+		width: 100%
+		line-height: 50px
+		a
+			color: $white
+			&:hover
+				text-decoration: underline
+		.dev 
+			position: absolute
+			right: 0
+			bottom: -45px
+			width: 150px
+			height: 40px
+			padding-left: 24px
+			background-image: url(../img/copy.png)
+			background-repeat: no-repeat
+			background-position: center left
+			line-height: 14px!important
+			background-size: 20px
+			font-size: 10px
+			padding-top: 5px
+			span 
+				display: block
 
 
 //ALWAYS END

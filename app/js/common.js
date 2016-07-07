@@ -21,6 +21,16 @@ $(function() {
 		});
 		return false;
 	});
+
+	$('.popup-slider').each(function() { 
+		$(this).magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			gallery: {
+				enabled:true
+			}
+		});
+	});
 	
 	try {
 		$.browserSelector();
@@ -31,8 +41,10 @@ $(function() {
 
 	};
 
+
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
+	//Анимация логин регистрация
 	$('.autoriz a').click(function(event) {
 		event.preventDefault();
 		var t        = $(this),
@@ -40,10 +52,20 @@ $(function() {
 			parrent  = t.parents('.autoriz');
 
 		$('.autoriz a').not(t).removeClass('active');
-		t.toggleClass('active');
-
-		parrent.find('form').not('#'+dataForm).removeClass('active');
-		$('#'+dataForm).toggleClass('active');		
+		toggleC(t);
+		parrent.find('form').not('#'+dataForm).removeClass('active');			
+		toggleC('#'+dataForm);
 	});
 
+	//Анимация фильтр
+	$('#search').on('click',function(){
+		toggleC(this);
+		toggleC('.filters');
+		// $(this).toggleClass('active');
+	});
+
+
+	function toggleC(el){
+		$(el).toggleClass('active');
+	};
 });
