@@ -91,7 +91,7 @@
 						<div class="col-md-8">						
 							<ul>
 								<!-- Описан класс class="active" для стилизации активного -->
-								<li><a href="#">Знакомства</a></li>
+								<li class="active"><a href="#">Знакомства</a></li>
 								<li><a href="#">Полезно</a></li>
 								<li><a href="#">Статьи</a></li>
 								<li><a href="#">О проекте</a></li>
@@ -108,81 +108,101 @@
 			<form class="filters">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-3">
-							<h3>Выберите регион</h3>
-							<div class="form-group">
-								<select name="country" id="country">
-									<option value="0">Любая страна</option>
-									<option value="1">Австралия</option>
-									<option value="110">Австрия</option>
-									<option value="4">Азербайджан</option>
-									<option value="159">Багамы</option>
-									<option value="7">Бангладеш</option>
-									<option value="101">Барбадос</option>
-									<option value="8">Бахрейн</option>
-									<option value="113">Беларусь</option>
-									<option value="160">Белиз</option>
-									<option value="114">Бельгия</option>
-									<option value="52">Бенин</option>
-									<option value="115">Болгария</option>
-									<option value="168">Боливия</option>                 
-								</select>
-							</div>
-							<div class="form-group">
-								<select name="region" id="region">
-									<option value="0">Любай регион</option>
-									<option value="1">Австралия</option>
-									<option value="110">Австрия</option>
-									<option value="4">Азербайджан</option>
-									<option value="159">Багамы</option>
-									<option value="7">Бангладеш</option>
-									<option value="101">Барбадос</option>
-									<option value="8">Бахрейн</option>
-									<option value="113">Беларусь</option>
-									<option value="160">Белиз</option>
-									<option value="114">Бельгия</option>
-									<option value="52">Бенин</option>
-									<option value="115">Болгария</option>
-									<option value="168">Боливия</option>                 
-								</select>
-							</div>
-							<div class="form-group">
-								<select name="city" id="city">
-									<option value="0">Любой город</option>
-									<option value="1">Австралия</option>
-									<option value="110">Австрия</option>
-									<option value="4">Азербайджан</option>
-									<option value="159">Багамы</option>
-									<option value="7">Бангладеш</option>
-									<option value="101">Барбадос</option>
-									<option value="8">Бахрейн</option>
-									<option value="113">Беларусь</option>
-									<option value="160">Белиз</option>
-									<option value="114">Бельгия</option>
-									<option value="52">Бенин</option>
-									<option value="115">Болгария</option>
-									<option value="168">Боливия</option>
-								</select>
+						<div class="col-md-3 col-sm-3">
+							<h3>Выберите регион:</h3>
+							<div class="wrap-el">
+								<div class="form-group">
+									<select name="country" id="country">
+										<option value="0">Любая страна</option>
+										<option value="1">Австралия</option>
+										<option value="110">Австрия</option>
+										<option value="4">Азербайджан</option>
+										<option value="159">Багамы</option>
+										<option value="7">Бангладеш</option>
+										<option value="101">Барбадос</option>
+										<option value="8">Бахрейн</option>
+										<option value="113">Беларусь</option>
+										<option value="160">Белиз</option>
+										<option value="114">Бельгия</option>
+										<option value="52">Бенин</option>
+										<option value="115">Болгария</option>
+										<option value="168">Боливия</option>
+									</select>
+								</div>								
+								<div class="form-group">
+									<select name="region" id="region">
+										<option value="0">Любай регион</option>
+										<option value="1">Австралия</option>
+										<option value="110">Австрия</option>
+										<option value="4">Азербайджан</option>
+										<option value="159">Багамы</option>
+										<option value="7">Бангладеш</option>
+										<option value="101">Барбадос</option>
+										<option value="8">Бахрейн</option>
+										<option value="113">Беларусь</option>
+										<option value="160">Белиз</option>
+										<option value="114">Бельгия</option>
+										<option value="52">Бенин</option>
+										<option value="115">Болгария</option>
+										<option value="168">Боливия</option>                 
+									</select>
+								</div>
+								<div class="form-group">
+									<select name="city" id="city">
+										<option value="0">Любой город</option>
+										<option value="1">Австралия</option>
+										<option value="110">Австрия</option>
+										<option value="4">Азербайджан</option>
+										<option value="159">Багамы</option>
+										<option value="7">Бангладеш</option>
+										<option value="101">Барбадос</option>
+										<option value="8">Бахрейн</option>
+										<option value="113">Беларусь</option>
+										<option value="160">Белиз</option>
+										<option value="114">Бельгия</option>
+										<option value="52">Бенин</option>
+										<option value="115">Болгария</option>
+										<option value="168">Боливия</option>
+									</select>
+								</div>
 							</div>
 						</div>
-						<div class="col-md-3">
-							<h3>Выберите пол</h3>
-							<div class="form-group">
-	            	<input type="radio" value="1" id="man" name="gender">
-	            	<label for="man"></label>
-	            	<span>
-	            		<!-- <i class="fa fa-male"></i>  -->
-	            		Мужчины
-	            	</span>
-	            </div>
-	            <div class="form-group">
-	            	<input type="radio" value="0" id="voman" name="gender" checked="checked">
-	            	<label for="voman"></label>
-	            	<span>
-	            		<!-- <i class="fa fa-female"></i>  -->
-	            		Женщины
-	            	</span>
-	        		</div>
+						<div class="col-md-3 col-sm-3">
+							<h3>Выберите пол:</h3>
+							<div class="wrap-el">
+								<div class="form-group">
+		            	<input type="radio" value="1" id="man" name="gender">
+		            	<label for="man"></label>
+		            	<span>
+		            		Мужчины
+		            	</span>
+		            </div>
+		            <div class="form-group">
+		            	<input type="radio" value="0" id="voman" name="gender" checked="checked">
+		            	<label for="voman"></label>
+		            	<span>
+		            		Женщины
+		            	</span>
+		        		</div>
+		        	</div>
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<h3>Укажите возраст:</h3>							
+							<div class="wrap-el">
+								<div class="range">
+									<span>от <output></output></span>
+									<input type="range" value="18" data-rangeSlider>
+								</div>
+								<div class="range">
+									<span>до <output></output></span>
+									<input type="range" value="60" data-rangeSlider>
+								</div>							
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3">
+							<div class="wrap-el right">
+								<button class="btn" type="submit">Искать друзей</button>
+							</div>
 						</div>
 					</div>
 				</div>
