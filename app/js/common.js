@@ -15,6 +15,11 @@ $(function() {
 					enabled:true
 				}
 			},	
+			grid: $('.grid'),
+			packeryOptions: {
+				itemSelector: '.form-card',
+				gutter: 4
+			},
 			range: $('.double-handle-slider'),
 			rangeMin: $('.min-value'),
 			rangeMax: $('.max-value'),
@@ -110,13 +115,48 @@ $(function() {
 			this.opt.magnific.each(function(){ 
 				$(this).magnificPopup(main.opt.magnificConf);
 			});
+			//Packery grid
+			this.opt.grid.packery();
+
+
+
 
 			// this.rangeInput();
 			this.logIn();
 			this.filter();
 
+			var stepSlider = document.getElementById('slider-step');
+
+				noUiSlider.create(stepSlider, {
+					start: [ 20 ],
+					step: 1,
+					range: {
+						'min': [  0 ],
+						'max': [ 100 ]
+					}
+				});
+			var stepSliderValueElement = document.getElementById('slider-step-value');
+
+			stepSlider.noUiSlider.on('update', function( values, handle ) {
+				stepSliderValueElement.innerHTML = values[handle];
+			});
+
+
+
+			
+			// make all grid-items draggable
+			// var $grid = this.opt.grid.packery();
+			// $grid.find('.form-card').each( function( i, gridItem ) {
+			//   var draggie = new Draggabilly( gridItem );
+			//   // bind drag events to Packery
+			//   $grid.packery( 'bindDraggabillyEvents', draggie );
+			// });
 		}
 	};
+
+
+
+
 	main.init();
 
 	// $(document).ready(function(){
