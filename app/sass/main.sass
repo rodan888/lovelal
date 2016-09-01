@@ -1,6 +1,7 @@
 @import "bourbon"
 @import "_vars.sass"
 @import "_form.sass"
+@import "_mixins.sass"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -179,7 +180,25 @@ body textarea:required:valid
 			width: 80px
 			height: 80px
 			vertical-align: top
-			overflow: hidden		
+			overflow: hidden	
+			&:last-child
+				position: relative
+				#file-dropzone
+					background-color: transparent
+					position: absolute
+					top: 5%
+					left: 5%
+					width: 90%
+					height: 90%
+					border: 1px solid $mainR					
+					font-size: 22px
+					color: $mainR
+					text-align: center
+					cursor: pointer
+					@include border-radius(4px)	
+					@include transition(box-shadow)
+					&:hover
+						box-shadow: 0 0 6px $gray
 			img
 				height: 100%
 .foto
@@ -217,6 +236,128 @@ body textarea:required:valid
 				a:hover
 					text-decoration: underline
 				
+//popup
+.popup
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(255,255,255, .8)
+	z-index: 10000
+	background-size: cover		
+	.upload
+		line-height: 55px
+		color: $mainR
+		transition: margin 0.3s
+		position: relative
+		&:before
+			position: absolute
+			content: ""
+			width: 0
+			height: 1px
+			background-color: $mainR
+			bottom: -1px
+			left: 0
+			transition: width 0.3s
+		&:hover
+			margin-left: 10px
+			&:before
+				width: 100%
+	.popup-content
+		width: 80%
+		height: 80%
+		top: 10%
+		left: 10%
+		position: absolute
+		text-align: center
+		text-align: center
+		img
+			// width: 100%			
+			min-height: 100%
+			// position: absolute
+			top: 0
+			left: 0
+	.fade_out
+		position: absolute
+		top: 5px
+		right: 5%
+		width: 30px
+		height: 30px
+		color: $white
+		line-height: 30px
+		text-align: center
+		font-size: 15px
+		cursor: pointer
+		color: $mainR
+		font-weight: bold
+	// .load
+	// 	position: absolute
+	// 	top: 5px
+	// 	left: 5%
+
+.dropzone-previews
+	max-width: 840px
+	max-height: 500px
+	overflow: auto
+	width: 100%
+	position: absolute
+	top: 50%
+	left: 50%
+	text-align: center
+	background-color: $white
+	box-shadow: 0 0 6px $gray
+	padding: 40px 0 20px
+	@include border-radius(6px)	
+	@include transform(translate(-50%,-50%))
+	&:before
+		position: absolute
+		content: ''
+		top: 40px
+		left: 5%
+		width: 90%
+		height: 1px
+		background-color: $gray	
+	li
+		display: inline-block
+		position: relative
+		vertical-align: top
+		height: 130px
+		width: 130px
+		padding: 5px
+		overflow: hidden		
+		margin: 10px
+		box-shadow: 0 0 6px $gray
+		@include border-radius(3px)		
+		.dz-remove
+			min-width: auto
+			position: absolute
+			top: 5px
+			right: 5px
+			padding: 0 6px
+			height: 25px
+			line-height: 25px
+			background-color: $white
+			color: $mainR
+			border-width: 1px
+			&:hover
+				background-color: $mainR
+				border-color: $mainR
+				color: $white
+
+		.dz-progress
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(255,255,255, .5)
+			background-image: url("../img/ajax_loader.gif")
+			background-position: center center
+			background-size: 130px
+			background-repeat: no-repeat
+			z-index: -1
 
 
 

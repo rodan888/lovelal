@@ -220,7 +220,7 @@
 				<div class="col-md-12 clrp">
 					<div class="col-md-3">
 						<div class="foto">
-							<div class="img-wrap">
+							<div class="img-wrap hover">
 								<img src="img/seampl.jpg" alt="foto">
 							</div>
 						</div>
@@ -320,6 +320,24 @@
 										<img src="img/seampl5.jpg" alt="foto">
 									</a>
 								</div>
+
+								<div class="popup-item">								
+									<form action="/upload" class="dropzone popup-btn" drop-zone="" data-id='foto-upload' id="file-dropzone"></form>
+									<div id="foto-upload" class="popup">
+								    <ul class="visualizacao sortable dropzone-previews"> 
+								    <!-- <button type="button" class="btn">Загрузить</button> -->
+								    </ul>
+										<div class="preview" style="display:none;">
+										  <li>
+									      <img data-dz-thumbnail />											    
+										    <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>									
+										    <div class="dz-error-message"><span data-dz-errormessage></span></div>
+										  </li>  
+										</div>
+									</div>
+								</div>
+
+
 							</div>
 						</div>
 					</div>				
@@ -476,12 +494,30 @@
 									<div id="slider-step"></div>
 							</div>	
 
+							<div class="form-card">
+								<div class="foto">
+									<div class="img-wrap">
+										<button type="button" class="btn crop"><i class="fa fa-crop"></i></button>
+										<img src="img/seampl.jpg" alt="foto">
+									</div>
+								</div>
+								<div class="btn-multi">
+									<button type="button" class="btn">Загрузить</button>
+									<button type="button" class="btn">Выбрать</button>
+								</div>
+							</div>
+
 
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+
+		<section id="upload">
+			
+		</section>
+
 	</main>
 	
 	<footer>
