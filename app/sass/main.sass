@@ -265,20 +265,20 @@ body textarea:required:valid
 			margin-left: 10px
 			&:before
 				width: 100%
-	.popup-content
-		width: 80%
-		height: 80%
-		top: 10%
-		left: 10%
-		position: absolute
-		text-align: center
-		text-align: center
-		img
-			// width: 100%			
-			min-height: 100%
-			// position: absolute
-			top: 0
-			left: 0
+	// .popup-content
+	// 	width: 80%
+	// 	height: 80%
+	// 	top: 10%
+	// 	left: 10%
+	// 	position: absolute
+	// 	text-align: center
+	// 	text-align: center
+	// 	img
+	// 		// width: 100%			
+	// 		min-height: 100%
+	// 		// position: absolute
+	// 		top: 0
+	// 		left: 0
 	.fade_out
 		position: absolute
 		top: 5px
@@ -297,7 +297,7 @@ body textarea:required:valid
 	// 	top: 5px
 	// 	left: 5%
 
-.dropzone-previews
+.dropzone-previews,.popup-content
 	max-width: 840px
 	max-height: 500px
 	overflow: auto
@@ -330,6 +330,9 @@ body textarea:required:valid
 		margin: 10px
 		box-shadow: 0 0 6px $gray
 		@include border-radius(3px)		
+		img
+			// width: 100%		
+			height: 100%	
 		.dz-remove
 			min-width: auto
 			position: absolute
