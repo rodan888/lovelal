@@ -17,6 +17,22 @@ $(function() {
 					enabled:true
 				}
 			},	
+			uploadForm: $('#file-dropzone'), 
+			uploadConfig: { 
+				url: "/upload",
+				maxFilesize: 5,   
+				paramName: "uploadfile",
+				maxThumbnailFilesize: 10,
+				addRemoveLinks: true,
+				previewsContainer: '.visualizacao', 
+				previewTemplate : $('.preview').html(),
+				accept: function(file, done) {
+					if (file.name == "justinbieber.jpg") {
+					  done("Naha, you don't.");
+					}
+					else { done(); }
+				}
+			},
 			grid: $('.grid'),
 			packeryOptions: {
 				itemSelector: '.form-card',
@@ -88,6 +104,18 @@ $(function() {
 				var popID = $(this).data('id'),
 						popup = $('#'+ popID);				
 
+				if ($(this).hasClass('popup-photo-list')) {
+					var photoList = $('.popup-slider img'),
+							photoL    = photoList.length-1,
+							photoRes  = popup.find('.popup-content');
+					photoRes.html("");
+					for(var i = 0; i < photoL; i++ ){
+						var listItem =  photoList[i].src;
+						photoRes.append('<li><img src="'+ listItem +'"></li>')
+					};
+				};
+
+				
 				popup.fadeIn('slow')
 					.css('height', $(window).height() + 'px')
 					.find('.dropzone-previews, .popup-content')
@@ -98,16 +126,6 @@ $(function() {
 					$(this).detach();
 				});
 
-				if ($(this).hasClass('popup-photo-list')) {
-					var photoList = $('.popup-slider img'),
-							photoL    = photoList.length-1,
-							photoRes  = popup.find('.popup-content');
-
-					for(var i = 0; i < photoL; i++ ){
-						var listItem =  photoList[i].src;
-						photoRes.append('<li><img src="'+ listItem +'"></li>')
-					};
-				};
 
 
 			});
@@ -139,6 +157,29 @@ $(function() {
 				event.preventDefault();
 			});
 		},
+		uploadFoto: function(){
+			this.opt.uploadForm.dropzone(
+				main.opt.uploadConfig
+			);
+		},
+		rangeSlider: function(){
+			var stepSlider = document.getElementById('slider-step'),
+				stepSliderValueElement = document.getElementById('slider-step-value');
+
+			console.log(noUiSlider);
+			noUiSlider.create(stepSlider, {
+				start: [ 20 ],
+				step: 1,
+				range: {
+					'min': [  0 ],
+					'max': [ 100 ]
+				}
+			});
+
+			stepSlider.noUiSlider.on('update', function( values, handle ) {
+				stepSliderValueElement.innerHTML = values[handle];
+			});
+		},
 		init: function(){
 			// default functions
 			this.dragstart(this.opt.img);
@@ -148,31 +189,26 @@ $(function() {
 			this.opt.magnific.each(function(){ 
 				$(this).magnificPopup(main.opt.magnificConf);
 			});
+
 			//Packery grid
 			this.opt.grid.packery();
+
 			// myPopup
 			this.popup();
-
 
 			// this.rangeInput();
 			this.logIn();
 			this.filter();
 
-			var stepSlider = document.getElementById('slider-step');
+			//Profile upload foto
+			this.uploadFoto();
 
-				noUiSlider.create(stepSlider, {
-					start: [ 20 ],
-					step: 1,
-					range: {
-						'min': [  0 ],
-						'max': [ 100 ]
-					}
-				});
-			var stepSliderValueElement = document.getElementById('slider-step-value');
 
-			stepSlider.noUiSlider.on('update', function( values, handle ) {
-				stepSliderValueElement.innerHTML = values[handle];
-			});
+
+			this.rangeSlider();
+	
+
+			
 
 
 
@@ -187,6 +223,8 @@ $(function() {
 		}
 	};
 	main.init();
+
+	imageCropper.init();
 
 	// $(document).ready(function(){
 
@@ -290,37 +328,37 @@ $(document).ready(function() {
 
 
   // instantiate the uploader
-  $('#file-dropzone').dropzone({ 
-    url: "/upload",
-    maxFilesize: 5,   
-    paramName: "uploadfile",
-    maxThumbnailFilesize: 10,
-    addRemoveLinks: true,
-    previewsContainer: '.visualizacao', 
-    previewTemplate : $('.preview').html(),
-    accept: function(file, done) {
-	    if (file.name == "justinbieber.jpg") {
-	      done("Naha, you don't.");
-    	  // $('.sortable').sortable('enable');
-	    }
-	    else { done(); }
-	 }
-    // init: function() {
-    //   this.on('completemultiple', function(file, json) {
-    //    $('.sortable').sortable('enable');
-    //   });
-    //   this.on('success', function(file, json) {
-    //     alert('aa');
-    //   });
-      
-    //   this.on('addedfile', function(file) {
-       
-    //   });
-      
-    //   this.on('drop', function(file) {
-    //     console.log('File',file)
-    //   }); 
-    // }
-  });
+ //  $('#file-dropzone').dropzone({ 
+	// url: "/upload",
+	// maxFilesize: 5,   
+	// paramName: "uploadfile",
+	// maxThumbnailFilesize: 10,
+	// addRemoveLinks: true,
+	// previewsContainer: '.visualizacao', 
+	// previewTemplate : $('.preview').html(),
+	// accept: function(file, done) {
+	// 	if (file.name == "justinbieber.jpg") {
+	// 	  done("Naha, you don't.");
+	// 	  // $('.sortable').sortable('enable');
+	// 	}
+	// 	else { done(); }
+	//  }
+	// init: function() {
+	//   this.on('completemultiple', function(file, json) {
+	//    $('.sortable').sortable('enable');
+	//   });
+	//   this.on('success', function(file, json) {
+	//     alert('aa');
+	//   });
+	  
+	//   this.on('addedfile', function(file) {
+	   
+	//   });
+	  
+	//   this.on('drop', function(file) {
+	//     console.log('File',file)
+	//   }); 
+	// }
+  // });
 
 });

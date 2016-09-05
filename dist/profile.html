@@ -324,15 +324,15 @@
 								<div class="popup-item">								
 									<form action="/upload" class="dropzone popup-btn" drop-zone="" data-id='foto-upload' id="file-dropzone"></form>
 									<div id="foto-upload" class="popup">
-								    <ul class="visualizacao sortable dropzone-previews"> 
-								    <!-- <button type="button" class="btn">Загрузить</button> -->
-								    </ul>
+										<ul class="visualizacao sortable dropzone-previews"> 
+											<!-- <button type="button" class="btn">Загрузить</button> -->
+										</ul>
 										<div class="preview" style="display:none;">
-										  <li>
-									      <img data-dz-thumbnail />											    
-										    <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>									
-										    <div class="dz-error-message"><span data-dz-errormessage></span></div>
-										  </li>  
+											<li>
+												<img data-dz-thumbnail />											    
+												<div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>									
+												<div class="dz-error-message"><span data-dz-errormessage></span></div>
+											</li>  
 										</div>
 									</div>
 								</div>
@@ -349,230 +349,254 @@
 				<div class="col-md-12">
 					<form id="profile">
 						<div class="grid" 
-							data-packery='{ 
-								"itemSelector": ".form-card", 
-								"gutter": 15 
-							}'>
-							<div class="form-card">
-								<h3>Основное:</h3>							
-								<div class="form-group">
-									<input type="text" name="name" placeholder="Ваше имя">
-									<label for="name"><i class="fa fa-user"></i></label>								
-								</div>
-								<div class="form-group">
-									<input type="text" name="second-name" placeholder="Фамилия">
-									<label for="second-name"><i class="fa fa-user"></i></label>					
-								</div>
-							</div>								
-							<div class="form-card">
-								<h3>Выберите пол:</h3>
-								<div class="form-group">
-									<input type="radio" value="1" id="man1" name="gender">
-									<label for="man1"></label>
-									<span>
-										Мужчины
-									</span>
-								</div>
-								<div class="form-group">
-									<input type="radio" value="0" id="voman1" name="gender" checked="checked">
-									<label for="voman1"></label>
-									<span>
-										Женщины
-									</span>
-								</div>		
-							</div>
-							<div class="form-card">
-								<h3>Дата рождения:</h3>
-								<div class="form-group">
-									<select name="day" id="day">
-										<option value="0">12</option>
-										<option value="1">13</option>
-										<option value="2">14</option>
-										<option value="3">15</option>
-									</select>
-								</div>							
-								<div class="form-group">
-									<select name="mounth" id="mounth">
-										<option value="0">Сентябрь</option>
-										<option value="1">Ноябрь</option>
-										<option value="2">Октябрь</option>
-										<option value="3">Декабрь</option>
-									</select>
-								</div>							
-								<div class="form-group">
-									<select name="year" id="year">
-										<option value="0">1988</option>
-										<option value="1">1989</option>
-										<option value="2">1990</option>
-										<option value="3">1991</option>
-									</select>
-								</div>					
-							</div>						
-							<div class="form-card">
-								<h3>Семейное положение:</h3>
-								<div class="form-group">
-									<select name="status" id="status">
-										<option value="0">Не выбрано</option>
-										<option value="1">Встречаюсь</option>
-										<option value="2">Женат</option>
-										<option value="3">В активном поиске</option>
-									</select>
-								</div>							
-							</div>
-							<div class="form-card">
-								<h3>Выберите регион:</h3>							
-								<div class="form-group">
-									<select name="country" id="country">
-										<option value="0">Любая страна</option>
-										<option value="1">Австралия</option>
-										<option value="110">Австрия</option>
-										<option value="4">Азербайджан</option>
-										<option value="159">Багамы</option>
-										<option value="7">Бангладеш</option>
-										<option value="101">Барбадос</option>
-										<option value="8">Бахрейн</option>
-										<option value="113">Беларусь</option>
-										<option value="160">Белиз</option>
-										<option value="114">Бельгия</option>
-										<option value="52">Бенин</option>
-										<option value="115">Болгария</option>
-										<option value="168">Боливия</option>
-									</select>
-								</div>								
-								<div class="form-group">
-									<select name="region" id="region">
-										<option value="0">Любай регион</option>
-										<option value="1">Австралия</option>
-										<option value="110">Австрия</option>
-										<option value="4">Азербайджан</option>
-										<option value="159">Багамы</option>
-										<option value="7">Бангладеш</option>
-										<option value="101">Барбадос</option>
-										<option value="8">Бахрейн</option>
-										<option value="113">Беларусь</option>
-										<option value="160">Белиз</option>
-										<option value="114">Бельгия</option>
-										<option value="52">Бенин</option>
-										<option value="115">Болгария</option>
-										<option value="168">Боливия</option>                 
-									</select>
-								</div>
-								<div class="form-group">
-									<select name="city" id="city">
-										<option value="0">Любой город</option>
-										<option value="1">Австралия</option>
-										<option value="110">Австрия</option>
-										<option value="4">Азербайджан</option>
-										<option value="159">Багамы</option>
-										<option value="7">Бангладеш</option>
-										<option value="101">Барбадос</option>
-										<option value="8">Бахрейн</option>
-										<option value="113">Беларусь</option>
-										<option value="160">Белиз</option>
-										<option value="114">Бельгия</option>
-										<option value="52">Бенин</option>
-										<option value="115">Болгария</option>
-										<option value="168">Боливия</option>
-									</select>
-								</div>
-							</div>
-							<div class="form-card">
-								<h3>Характеристики:</h3>							
-								<div class="form-group">
-									<input type="text" name="height" placeholder="Ваш рост">
-									<label for="height"><i class="fa fa-male"></i></label>								
-								</div>
-								<div class="form-group">
-									<input type="text" name="second-name" placeholder="Ваш вес">
-									<label for="second-name"><i class="fa fa-user"></i></label>					
-								</div>
-									Ваш возраст:<span class="example-val" id="slider-step-value"></span>
-									<div id="slider-step"></div>
+						data-packery='{ 
+						"itemSelector": ".form-card", 
+						"gutter": 15 
+					}'>
+					<div class="form-card">
+						<h3>Основное:</h3>							
+						<div class="form-group">
+							<input type="text" name="name" placeholder="Ваше имя">
+							<label for="name"><i class="fa fa-user"></i></label>								
+						</div>
+						<div class="form-group">
+							<input type="text" name="second-name" placeholder="Фамилия">
+							<label for="second-name"><i class="fa fa-user"></i></label>					
+						</div>
+					</div>								
+					<div class="form-card">
+						<h3>Выберите пол:</h3>
+						<div class="form-group">
+							<input type="radio" value="1" id="man1" name="gender">
+							<label for="man1"></label>
+							<span>
+								Мужчины
+							</span>
+						</div>
+						<div class="form-group">
+							<input type="radio" value="0" id="voman1" name="gender" checked="checked">
+							<label for="voman1"></label>
+							<span>
+								Женщины
+							</span>
+						</div>		
+					</div>
+					<div class="form-card">
+						<h3>Дата рождения:</h3>
+						<div class="form-group">
+							<select name="day" id="day">
+								<option value="0">12</option>
+								<option value="1">13</option>
+								<option value="2">14</option>
+								<option value="3">15</option>
+							</select>
+						</div>							
+						<div class="form-group">
+							<select name="mounth" id="mounth">
+								<option value="0">Сентябрь</option>
+								<option value="1">Ноябрь</option>
+								<option value="2">Октябрь</option>
+								<option value="3">Декабрь</option>
+							</select>
+						</div>							
+						<div class="form-group">
+							<select name="year" id="year">
+								<option value="0">1988</option>
+								<option value="1">1989</option>
+								<option value="2">1990</option>
+								<option value="3">1991</option>
+							</select>
+						</div>					
+					</div>						
+					<div class="form-card">
+						<h3>Семейное положение:</h3>
+						<div class="form-group">
+							<select name="status" id="status">
+								<option value="0">Не выбрано</option>
+								<option value="1">Встречаюсь</option>
+								<option value="2">Женат</option>
+								<option value="3">В активном поиске</option>
+							</select>
+						</div>							
+					</div>
+					<div class="form-card">
+						<h3>Выберите регион:</h3>							
+						<div class="form-group">
+							<select name="country" id="country">
+								<option value="0">Любая страна</option>
+								<option value="1">Австралия</option>
+								<option value="110">Австрия</option>
+								<option value="4">Азербайджан</option>
+								<option value="159">Багамы</option>
+								<option value="7">Бангладеш</option>
+								<option value="101">Барбадос</option>
+								<option value="8">Бахрейн</option>
+								<option value="113">Беларусь</option>
+								<option value="160">Белиз</option>
+								<option value="114">Бельгия</option>
+								<option value="52">Бенин</option>
+								<option value="115">Болгария</option>
+								<option value="168">Боливия</option>
+							</select>
+						</div>								
+						<div class="form-group">
+							<select name="region" id="region">
+								<option value="0">Любай регион</option>
+								<option value="1">Австралия</option>
+								<option value="110">Австрия</option>
+								<option value="4">Азербайджан</option>
+								<option value="159">Багамы</option>
+								<option value="7">Бангладеш</option>
+								<option value="101">Барбадос</option>
+								<option value="8">Бахрейн</option>
+								<option value="113">Беларусь</option>
+								<option value="160">Белиз</option>
+								<option value="114">Бельгия</option>
+								<option value="52">Бенин</option>
+								<option value="115">Болгария</option>
+								<option value="168">Боливия</option>                 
+							</select>
+						</div>
+						<div class="form-group">
+							<select name="city" id="city">
+								<option value="0">Любой город</option>
+								<option value="1">Австралия</option>
+								<option value="110">Австрия</option>
+								<option value="4">Азербайджан</option>
+								<option value="159">Багамы</option>
+								<option value="7">Бангладеш</option>
+								<option value="101">Барбадос</option>
+								<option value="8">Бахрейн</option>
+								<option value="113">Беларусь</option>
+								<option value="160">Белиз</option>
+								<option value="114">Бельгия</option>
+								<option value="52">Бенин</option>
+								<option value="115">Болгария</option>
+								<option value="168">Боливия</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-card">
+						<h3>Характеристики:</h3>							
+						<div class="form-group">
+							<input type="text" name="height" placeholder="Ваш рост">
+							<label for="height"><i class="fa fa-male"></i></label>								
+						</div>
+						<div class="form-group">
+							<input type="text" name="second-name" placeholder="Ваш вес">
+							<label for="second-name"><i class="fa fa-user"></i></label>					
+						</div>
+						<!-- Ваш возраст:<span class="example-val" id="slider-step-value"></span>
+						<div id="slider-step"></div>
 
 
-									Ваш вес:<span class="example-val" id="slider-weight"></span>
-									<div id="slider-step"></div>
-							</div>	
+						Ваш вес:<span class="example-val" id="slider-weight"></span>
+						<div id="slider-step"></div> -->
+					</div>	
 
-							<div class="form-card">
-								<div class="foto">
-									<div class="img-wrap">
-										<button type="button" class="btn crop"><i class="fa fa-crop"></i></button>
-										<img src="img/seampl.jpg" alt="foto">
+					<div class="form-card">
+						<div class="foto">
+							<div class="img-wrap">
+								<button type="button" class="btn popup-btn crop" data-id="crop-photo"><i class="fa fa-crop"></i></button>
+								<img id="crop_result" src="img/seampl.jpg" alt="foto">
+							</div>
+							<div id="crop-photo" class="popup">
+								<div class="popup-content">
+									<div class="table">
+										<div class="tableRow">
+											<div class="tableCell box">
+												<canvas data-img="img/seampl.jpg" id="panel" width="380" height="380"></canvas>
+											</div>
+											<div class="tableCell box">
+												<img id="crop_result" />
+											</div>
+										</div>
+
+										<div class="tableRow">
+											<div class="tableCell">
+												Увеличить:  <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
+
+											</div>
+											<div class="tableCell">
+												<button type="button" id="cropImgButtn">Обрезать</button>
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="btn-multi">
-									<button type="button" class="btn">Загрузить</button>
-									<button type="button" class="btn popup-btn popup-photo-list" data-id="popup-photo-list">Выбрать</button>
-								</div>
-								<div id="popup-photo-list" class="popup">
-									<div class="popup-content"></div>
-								</div>
+								</div>										
 							</div>
-
-
 						</div>
-					</form>
+						<div class="btn-multi">
+							<button type="button" class="btn call-upload">Загрузить</button>
+							<button type="button" class="btn popup-btn popup-photo-list" data-id="popup-photo-list">Выбрать</button>
+						</div>
+						<div id="popup-photo-list" class="popup">
+							<ul class="popup-content"></ul>
+						</div>
+					</div>
+
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<section id="upload">
+
+</section>
+
+</main>
+
+<footer>
+	<div class="bottom-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="logo">
+						<a href="/">
+							<img src="img/logo.png" alt="lovelal">
+						</a>
+						<a href="#">
+							Уникальная социальная площадка для людей, которым не подходят обычные сайты знакомств
+						</a>							
+					</div>
+				</div>
+				<div class="col-md-6">
+					<ul class="nav">			 	
+						<li><a href="#">Знакомства</a></li>
+						<li><a href="#">Полезно</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">О проекте</a></li>
+					</ul>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div class="copy">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					© <a href="http://lovelal.com/">lovelal.com</a>
+				</div>
+				<div class="col-md-3 center">
+					<a href="#">Политика конфиденциальности</a>
+				</div>
+				<div class="col-md-3 center">
+					<a href="sitemap.xml"><i class="fa fa-sitemap"></i> Sitemap</a>
+				</div>
+				<div class="col-md-3">
+					<div class="dev">
+						<a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">
+							Developed by
+							<span>Alexander Tsymbalyuk</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</footer>
 
-		<section id="upload">
-			
-		</section>
-
-	</main>
-	
-	<footer>
-		<div class="bottom-nav">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="logo">
-							<a href="/">
-								<img src="img/logo.png" alt="lovelal">
-							</a>
-							<a href="#">
-								Уникальная социальная площадка для людей, которым не подходят обычные сайты знакомств
-							</a>							
-						</div>
-					</div>
-					<div class="col-md-6">
-						<ul class="nav">			 	
-							<li><a href="#">Знакомства</a></li>
-							<li><a href="#">Полезно</a></li>
-							<li><a href="#">Статьи</a></li>
-							<li><a href="#">О проекте</a></li>
-						</ul>
-					</div>			
-				</div>
-			</div>
-		</div>
-		<div class="copy">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						© <a href="http://lovelal.com/">lovelal.com</a>
-					</div>
-					<div class="col-md-3 center">
-						<a href="#">Политика конфиденциальности</a>
-					</div>
-					<div class="col-md-3 center">
-						<a href="sitemap.xml"><i class="fa fa-sitemap"></i> Sitemap</a>
-					</div>
-					<div class="col-md-3">
-						<div class="dev">
-							<a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">
-								Developed by
-								<span>Alexander Tsymbalyuk</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
