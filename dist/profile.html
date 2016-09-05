@@ -199,7 +199,17 @@
 										</div>
 									</div>
 								</div>
-								<div class="double-handle-slider"></div>					
+								<div class="double-handle-slider"></div>	
+								<div class="form-group range">
+									<input
+								    data-addui='slider'
+								    data-min='0'
+								    data-step='1'
+								    data-max='100'
+								    data-range='true'
+								    value='20'
+								  />
+								</div>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-3 form-card">
@@ -478,13 +488,17 @@
 					</div>
 					<div class="form-card">
 						<h3>Характеристики:</h3>							
-						<div class="form-group">
-							<input type="text" name="height" placeholder="Ваш рост">
-							<label for="height"><i class="fa fa-male"></i></label>								
+						<div class="form-group range">
+							<input data-addui='slider'
+										 data-step='1'
+										 data-id='old'
+										 value='20'/>
 						</div>
 						<div class="form-group">
-							<input type="text" name="second-name" placeholder="Ваш вес">
-							<label for="second-name"><i class="fa fa-user"></i></label>					
+							<input data-addui='slider'
+										 data-step='1'
+										 data-id='weight'
+										 value='50'/>
 						</div>
 						<!-- Ваш возраст:<span class="example-val" id="slider-step-value"></span>
 						<div id="slider-step"></div>

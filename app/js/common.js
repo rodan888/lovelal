@@ -59,29 +59,7 @@ $(function() {
 					}
 				}
 			}	
-		},
-		// rangeInput: function(){	
-		// 	noUiSlider.create( main.opt.range, main.opt.rangeConfig);	
-			
-		// 	main.opt.range.noUiSlider.on('change', function( values, handle ) { 			
-		// 		var rangeValues = values;
-		// 		main.opt.rangeMin.value = rangeValues[0];
-		// 		main.opt.rangeMax.value = rangeValues[1];
-			
-		// 		var val = values[handle];			
-		// 		if(handle) {
-		// 			main.opt.rangeMax.value = Math.round(val);
-		// 		} else {
-		// 			main.opt.rangeMin.value = Math.round(val);
-		// 		}
-		// 	});	
-		// 	main.opt.rangeMin.addEventListener('change', function(){
-		// 		main.opt.range.noUiSlider.set([this.value, null]);
-		// 	});				
-		// 	main.opt.rangeMax.addEventListener('change', function(){
-		// 		main.opt.range.noUiSlider.set([null, this.value]);
-		// 	});
-		// },
+		},		
 		filter: function(){
 			this.opt.butSearch.on('click',function(){
 				$(this).addClass('active');
@@ -163,22 +141,7 @@ $(function() {
 			);
 		},
 		rangeSlider: function(){
-			var stepSlider = document.getElementById('slider-step'),
-				stepSliderValueElement = document.getElementById('slider-step-value');
-
-			console.log(noUiSlider);
-			noUiSlider.create(stepSlider, {
-				start: [ 20 ],
-				step: 1,
-				range: {
-					'min': [  0 ],
-					'max': [ 100 ]
-				}
-			});
-
-			stepSlider.noUiSlider.on('update', function( values, handle ) {
-				stepSliderValueElement.innerHTML = values[handle];
-			});
+			
 		},
 		init: function(){
 			// default functions
@@ -270,56 +233,6 @@ $(function() {
 
 
 $(document).ready(function() {
-  var doubleHandleSlider = document.querySelector('.double-handle-slider');
-	var minValInput = document.querySelector('.min-value');
-	var maxValInput = document.querySelector('.max-value');
-
-	
-	noUiSlider.create(doubleHandleSlider, {
-		start: [ 0, 100 ],
-		connect: true,
-		tooltips: false,
-		step: 1,
-		range: {
-			'min': [ 0 ],
-			'max': [ 100 ]
-		},
-		format: {
-			to: function(value) {
-				return value;
-			},
-			from: function(value) {
-				return value;
-			}
-		}
-	});	
-	doubleHandleSlider.noUiSlider.on('change', function( values, handle ) { 			
-		var rangeValues = values;
-
-			minValInput.value = rangeValues[0];
-			maxValInput.value = rangeValues[1];
-			
-			// This version updates a single input on change
-			var val = values[handle]; // 0 or 1
-			
-			if(handle) {
-				maxValInput.value = Math.round(val);
-			} else {
-				minValInput.value = Math.round(val);
-			}
-	});	
-		minValInput.addEventListener('change', function(){
-			doubleHandleSlider.noUiSlider.set([this.value, null]);
-		});
-			
-		maxValInput.addEventListener('change', function(){
-			doubleHandleSlider.noUiSlider.set([null, this.value]);
-		});
-
-
-
-
-
 
 // $(document).ready(function(){
 //  $('.sortable').sortable();
