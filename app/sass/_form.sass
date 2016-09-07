@@ -7,15 +7,28 @@ form
 		position: relative
 		margin-bottom: 10px
 		overflow: hidden	
+		&:last-child
+			margin-bottom: 0
 		&.range
-			min-height: 80px
+			min-height: 62px			
+			overflow: visible!important
+			.label
+				position: absolute
+				color: $black
+				font-size: 16px
+				margin: 10px 0 5px
+				left: 25px
+				bottom: -2px
+				text-align: left
+		label
+			font-size: 18px
 	input[type="text"], input[type="password"], textarea 
 		width: 100%
 		height: 35px
 		padding: 10px 10px 10px 90px
 		box-sizing: border-box
 		border: 1px solid $gray
-		color: $gray
+		color: $black
 		font-size: 14px
 		border-radius: 3px
 		transition: all 0.3s $custom-easing	
@@ -213,23 +226,14 @@ select
 	appearance: none !important
 	&:focus
 		background-position: 98% -32px
-.range
-	span
-		color: $textColor
-		font-size: 14px
-		margin: 10px 0 5px
-		display: block
-		output
-			color: $mainR
-			font-size: 16px
 
 .addui-slider
 	display: block
 	box-sizing: border-box
 	position: relative
 	&.addui-slider-horizontal
-		height: 100px
-		padding-top: 50px
+		height: 55px
+		padding-top: 0px
 		width: calc(100% - 50px)
 		margin: 16px 25px
 		.addui-slider-track
@@ -250,11 +254,12 @@ select
 		cursor: pointer
 	.output
 		position: absolute
-		bottom: -30px
+		bottom: -10px
 		width: 100%
-		text-align: center
+		text-align: right
 		color: $black
 		font-size: 16px
+		border-bottom: 1px solid $grayLight
 	.addui-slider-track
 		display: block
 		position: relative
@@ -300,7 +305,7 @@ select
 					font-size: 14px!important
 					text-align: center
 					color: $white
-					line-height: 22px
+					line-height: 39px
 					position: absolute
 					z-index: 1 
 					// @include transform(rotate(135deg))
@@ -368,6 +373,25 @@ select
 
 #profile
 	padding: 20px 0
+.procent
+	position: absolute
+	top: -10px
+	right: -10px
+	width: 30px
+	height: 30px
+	background-color: $mainR
+	line-height: 30px
+	font-size: 11px
+	color: $white
+	box-shadow: 0px 2px 3px $gray
+	z-index: 10
+	@include border-radius(50%)
+	&.done
+		width: 20px
+		height: 20px
+		background-color: #8DC360
+		line-height: 20px
+		box-shadow: none
 
 
 		

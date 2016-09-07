@@ -20,7 +20,8 @@
 
         windowWidth: 300,
 
-        init: function() {            
+        init: function() {  
+            console.log('crop-init line 24');
             this.image.src = $('#panel').data('img');
             this.image.onload = this.onImageLoad.bind(this);
             document.getElementById("cropImgButtn").onclick = this.showCropedImage.bind(this);

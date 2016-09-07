@@ -237,7 +237,9 @@
 					</div>	
 					<div class="col-md-9 clrp">      				
 						<div class="profile-wrap">
-							<h1 class="user-name">Полина Фомина</h1>
+							<h1 class="user-name">Полина Фомина 
+								<button type="button" class="setting">Редактировать профиль<i class="fa fa-cog"></i></button>
+							</h1>
 							<div class="user-ifnfo">
 								<ul>
 									<li>
@@ -364,6 +366,7 @@
 						"gutter": 15 
 					}'>
 					<div class="form-card">
+						<span class="procent">+10%</span>
 						<h3>Основное:</h3>							
 						<div class="form-group">
 							<input type="text" name="name" placeholder="Ваше имя">
@@ -373,8 +376,17 @@
 							<input type="text" name="second-name" placeholder="Фамилия">
 							<label for="second-name"><i class="fa fa-user"></i></label>					
 						</div>
+						<div class="form-group">
+							<input type="text" name="phone" placeholder="Телефон">
+							<label for="phone"><i class="fa fa-phone"></i></label>					
+						</div>
+						<div class="form-group">
+							<input type="text" name="mail" placeholder="E-mail">
+							<label for="mail">@</label>		
+						</div>
 					</div>								
 					<div class="form-card">
+						<span class="procent">+10%</span>
 						<h3>Выберите пол:</h3>
 						<div class="form-group">
 							<input type="radio" value="1" id="man1" name="gender">
@@ -392,6 +404,7 @@
 						</div>		
 					</div>
 					<div class="form-card">
+					<span class="procent done"><i class="fa fa-check"></i></span>
 						<h3>Дата рождения:</h3>
 						<div class="form-group">
 							<select name="day" id="day">
@@ -419,6 +432,7 @@
 						</div>					
 					</div>						
 					<div class="form-card">
+						<span class="procent">+10%</span>
 						<h3>Семейное положение:</h3>
 						<div class="form-group">
 							<select name="status" id="status">
@@ -430,6 +444,7 @@
 						</div>							
 					</div>
 					<div class="form-card">
+						<span class="procent">+10%</span>
 						<h3>Выберите регион:</h3>							
 						<div class="form-group">
 							<select name="country" id="country">
@@ -449,7 +464,7 @@
 								<option value="168">Боливия</option>
 							</select>
 						</div>								
-						<div class="form-group">
+						<div class="form-group">							
 							<select name="region" id="region">
 								<option value="0">Любай регион</option>
 								<option value="1">Австралия</option>
@@ -487,28 +502,42 @@
 						</div>
 					</div>
 					<div class="form-card">
+						<span class="procent">+10%</span>
 						<h3>Характеристики:</h3>							
 						<div class="form-group range">
+							<span class="label">Возраст:</span>
 							<input data-addui='slider'
 										 data-step='1'
 										 data-id='old'
 										 value='20'/>
 						</div>
-						<div class="form-group">
+						<div class="form-group range">
+							<span class="label">Вес:</span>
 							<input data-addui='slider'
 										 data-step='1'
 										 data-id='weight'
 										 value='50'/>
 						</div>
-						<!-- Ваш возраст:<span class="example-val" id="slider-step-value"></span>
-						<div id="slider-step"></div>
-
-
-						Ваш вес:<span class="example-val" id="slider-weight"></span>
-						<div id="slider-step"></div> -->
+						<div class="form-group range">
+							<span class="label">Рост:</span>
+							<input data-addui='slider'
+										 data-step='1'
+										 max='220'
+										 data-id='height'
+										 value='170'/>
+						</div>
 					</div>	
+					<div class="form-card">
+						<span class="procent">+10%</span>
+						<!-- <h3>О себе:</h3>-->
+						<div class="form-group">
+							<textarea name="about" placeholder="Расскажите о себе:"></textarea>
+							<label for="about"><i class="fa fa-smile-o"></i></label>
+						</div>
+					</div>
 
 					<div class="form-card">
+						<span class="procent done"><i class="fa fa-check"></i></span>
 						<div class="foto">
 							<div class="img-wrap">
 								<button type="button" class="btn popup-btn crop" data-id="crop-photo"><i class="fa fa-crop"></i></button>
@@ -518,7 +547,7 @@
 								<div class="popup-content">
 									<div class="table">
 										<div class="tableRow">
-											<div class="tableCell box">
+											<div class="tableCell mt2 box">
 												<canvas data-img="img/seampl.jpg" id="panel" width="380" height="380"></canvas>
 											</div>
 											<div class="tableCell box">
@@ -528,8 +557,14 @@
 
 										<div class="tableRow">
 											<div class="tableCell">
-												Увеличить:  <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
-
+												Увеличить:  
+												<input 
+													id='scaleSlider' 
+													type='range' 
+													min='1' 
+													max='3.0' 
+													step='0.01' 													
+													value='1.0' />
 											</div>
 											<div class="tableCell">
 												<button type="button" id="cropImgButtn">Обрезать</button>

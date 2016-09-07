@@ -89,8 +89,17 @@ $(function() {
 					photoRes.html("");
 					for(var i = 0; i < photoL; i++ ){
 						var listItem =  photoList[i].src;
-						photoRes.append('<li><img src="'+ listItem +'"></li>')
+						photoRes.append('<li class="ava-select"><img src="'+ listItem +'"></li>')
 					};
+
+					$('.ava-select').on('click', function(){
+						var src = $(this).find('img').attr('src'),
+							canvas = $('#panel');
+						canvas.data('img',src).attr('data-img',src);
+						$('#crop_result').attr('src',src);
+						console.log(src);
+					});
+
 				};
 
 				
@@ -187,12 +196,9 @@ $(function() {
 	};
 	main.init();
 
-	imageCropper.init();
-
-	// $(document).ready(function(){
-
-	// });
-
+	$('.btn.crop').on('click', function(){
+		imageCropper.init();
+	});
 	
 	// $("form").submit(function() {
 	// 	var th = $(this);

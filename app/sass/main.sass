@@ -210,7 +210,19 @@ body textarea:required:valid
 	font-size: 25px
 	max-width: 600px
 	border-bottom: 1px solid #ccc
-
+	position: relative
+.setting
+	font-size: 14px
+	background-color: $alfa
+	color: $gray
+	position: absolute
+	top: 8px
+	right: 0
+	@include transition(color 0.3s)
+	&:hover
+		color: $black
+	i
+		margin-left: 5px
 .user-ifnfo
 	ul
 		li
