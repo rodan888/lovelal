@@ -247,6 +247,138 @@ body textarea:required:valid
 					min-width: 100px
 				a:hover
 					text-decoration: underline
+
+//blog card start
+.blog-card 
+	background: $white
+	box-shadow: 0 0 6px $gray
+	margin: 0 auto 20px
+	overflow: hidden
+	position: relative
+	font-size: 14px
+	line-height: 1.45em	
+	@include border-radius(3px)
+	@include transition(height 0.3s)
+
+	&:nth-child(odd)
+		padding-left: 240px
+		.img-wrap	
+			left: 0
+		.details 
+			left: -100%
+			padding-left: 30px
+		&:hover 
+			.details 
+				left: -9px
+
+	&:nth-child(even)
+		padding-right: 240px
+		.img-wrap
+			right: 0
+		.details 
+			right: -100%
+		&:hover 
+			.details 
+				right: -9px	
+				left: inherit
+
+	&:hover .img-wrap
+		// @include transform(rotate(5deg) scale(1.3))		
+	.img-wrap
+		width: 200px
+		height: 200px
+		position: absolute
+		top: 0
+		@include transform(rotate(-5deg) scale(1.3))
+		// @include transition(all 0.3s)
+		img
+			width: 100%
+			min-height: auto
+	.details 
+		background: rgba(0, 0, 0, 0.6)
+		box-sizing: border-box
+		color: $white
+		list-style: none
+		margin: 0
+		padding: 20px 15px 0
+		height: 205px
+		width: 240px
+		position: absolute
+		top: -10px
+		@include transition(all 0.3s)
+		@include transform(rotate(-5deg))
+		> li 		
+			padding: 3px 0
+			@include transform(rotate(5deg))
+		li:before, .tags ul:before 
+			font-family: FontAwesome
+			margin-right: 10px
+			vertical-align: middle
+		.author:before 
+			content: "\f007"
+		.date:before 
+			content: "\f133"
+		.tags ul 
+			list-style: none
+			margin: 0
+			padding: 0
+			&:before 
+				content: "\f02b"
+			li 
+				display: inline-block
+				margin-right: 3px
+		a 
+			color: inherit
+			border-bottom: 1px dotted
+			&:hover 
+				color: $mainR
+
+	.description 
+		padding: 10px
+		box-sizing: border-box
+		position: relative
+		h2
+			font-weight: 100
+			font-family: 'RobotoRegular'
+			color: $black
+			line-height: 1em
+			margin: 0 0 10px 0
+		h3 
+			color: $gray
+			font-family: 'RobotoRegular'
+			font-weight: 100
+			line-height: 1.2em
+			text-transform: uppercase
+			font-size: 1em
+			font-weight: 400
+			margin: 1.2% 0
+		p 
+			position: relative
+			margin: 0
+			padding-top: 20px
+			&:after 
+				content: ""
+				background: $mainR
+				height: 3px
+				width: 40px				
+				position: absolute
+				top: 6px
+				left: 0
+		a 
+			color: $mainR
+			margin-bottom: 10px
+			float: right
+			&:after 				
+				content: "\f061"
+				font-family: FontAwesome
+				margin-left: -10px
+				opacity: 0
+				vertical-align: middle
+				@include transition(all 0.3s)
+			&:hover:after 
+				margin-left: 5px
+				opacity: 1
+//blog card end
 				
 //popup
 .popup
@@ -436,6 +568,54 @@ footer
 			span 
 				display: block
 
+//Page 404 start
+main.error
+	min-height: 600px
+	svg
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-top: -250px
+		margin-left: -400px	
+	.message-box 
+		height: 200px
+		width: 380px
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-top: -100px
+		margin-left: 50px
+		color: $mainR		
+		font-weight: 300
+		h1 
+			font-size: 60px
+			line-height: 46px
+			margin-bottom: 40px
+	#Polygon-1,
+	#Polygon-2, 
+	#Polygon-3, 
+	#Polygon-4,
+	#Polygon-4, 
+	#Polygon-5 
+		animation: float 1s infinite ease-in-out alternate
+	#Polygon-2 
+		animation-delay: .2s 
+	#Polygon-3 
+		animation-delay: .4s 
+	#Polygon-4 
+		animation-delay: .6s 
+	#Polygon-5 
+		animation-delay: .8s 
+
+@keyframes float 
+	100% 
+		@include transform(translateY(20px))
+	
+
+
+	
+
+//Page 404 end
 
 //ALWAYS END
 @import "media"

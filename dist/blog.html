@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Lovelal</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	
+
+	
+	<!-- Load CSS Start -->
+	<link rel="stylesheet" href="css/vendor.min.css">
+	<link rel="stylesheet" href="css/header.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<!-- Load CSS End -->
+
+
+</head>
+
+<body>
+	<header>
+		<div class="header-wrap" style="background-image: url('img/topImage.jpg')">
+			<nav class="register">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-5 logo">
+							<a href="/">
+								<img src="img/logo.png" alt="lovelal">
+							</a>
+							<a href="#">
+								Уникальная социальная площадка для людей, которым не подходят обычные сайты знакомств
+							</a>							
+						</div>
+						<div class="col-sm-7 autoriz">
+							<ul>
+								<li>
+									<a href="#" data-form="register">
+										<i class="fa fa-user"></i> Кабинет
+									</a>
+								</li>
+								<li>
+									<a href="#" data-form="signIn">
+										<i class="fa fa-sign-out"></i> Выход
+									</a>									
+								</li>
+							</ul>
+							<form id="signIn">
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">E-mail</label>
+								</div>
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">Пароль</label>
+								</div>
+								<button type="submit">Войти</button>
+							</form>
+
+							<form id="register">
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">E-mail</label>
+								</div>
+								<div class="form-group">
+									<input type="text"/>
+									<label for="fancy-text">Пароль</label>
+								</div>
+								<span class="label">
+									Введенный Вами пароль будет выслан Вам на эл. почту. <br>
+									Если Вы не введете пароль, то сайт автоматически сгенерирует для Вас надежный пароль.
+								</span>
+								<button type="submit">Зарегистрироваться</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="menu-wrap">
+			<nav class="navigation">
+				<div class="container clrp">
+					<div class="row">
+						<div class="col-md-8">						
+							<ul>
+								<!-- Описан класс class="active" для стилизации активного -->
+								<li><a href="/">Знакомства</a></li>
+								<li><a href="#">Полезно</a></li>
+								<li class="active"><a href="blog.html">Статьи</a></li>
+								<li><a href="about.html">О проекте</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4 search">
+							<button type="button" id="search">
+								<i class="fa fa-search"></i> Поиск друзей 
+							</button>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<form class="filters">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 form-card">
+							<h3>Выберите регион:</h3>
+							<div class="wrap-el">
+								<div class="form-group">
+									<select name="country" id="country">
+										<option value="0">Любая страна</option>
+										<option value="1">Австралия</option>
+										<option value="110">Австрия</option>
+										<option value="4">Азербайджан</option>
+										<option value="159">Багамы</option>
+										<option value="7">Бангладеш</option>
+										<option value="101">Барбадос</option>
+										<option value="8">Бахрейн</option>
+										<option value="113">Беларусь</option>
+										<option value="160">Белиз</option>
+										<option value="114">Бельгия</option>
+										<option value="52">Бенин</option>
+										<option value="115">Болгария</option>
+										<option value="168">Боливия</option>
+									</select>
+								</div>								
+								<div class="form-group">
+									<select name="region" id="region">
+										<option value="0">Любай регион</option>
+										<option value="1">Австралия</option>
+										<option value="110">Австрия</option>
+										<option value="4">Азербайджан</option>
+										<option value="159">Багамы</option>
+										<option value="7">Бангладеш</option>
+										<option value="101">Барбадос</option>
+										<option value="8">Бахрейн</option>
+										<option value="113">Беларусь</option>
+										<option value="160">Белиз</option>
+										<option value="114">Бельгия</option>
+										<option value="52">Бенин</option>
+										<option value="115">Болгария</option>
+										<option value="168">Боливия</option>                 
+									</select>
+								</div>
+								<div class="form-group">
+									<select name="city" id="city">
+										<option value="0">Любой город</option>
+										<option value="1">Австралия</option>
+										<option value="110">Австрия</option>
+										<option value="4">Азербайджан</option>
+										<option value="159">Багамы</option>
+										<option value="7">Бангладеш</option>
+										<option value="101">Барбадос</option>
+										<option value="8">Бахрейн</option>
+										<option value="113">Беларусь</option>
+										<option value="160">Белиз</option>
+										<option value="114">Бельгия</option>
+										<option value="52">Бенин</option>
+										<option value="115">Болгария</option>
+										<option value="168">Боливия</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3 form-card">
+							<h3>Выберите пол:</h3>
+							<div class="wrap-el">
+								<div class="form-group">
+									<input type="radio" value="1" id="man" name="gender">
+									<label for="man"></label>
+									<span>
+										Мужчины
+									</span>
+								</div>
+								<div class="form-group">
+									<input type="radio" value="0" id="voman" name="gender" checked="checked">
+									<label for="voman"></label>
+									<span>
+										Женщины
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3 form-card">
+							<h3>Укажите возраст:</h3>							
+							<div class="wrap-el">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-sm-6 clrp">
+											от <input type="number" class="min-value" value="0" />					
+										</div>
+										<div class="col-sm-6 clrp">
+											до <input type="number" class="max-value" value="100" />		
+										</div>
+									</div>
+								</div>
+								<div class="double-handle-slider"></div>	
+								<div class="form-group range">
+									<input
+								    data-addui='slider'
+								    data-min='0'
+								    data-step='1'
+								    data-max='100'
+								    data-range='true'
+								    value='20'
+								  />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-3 form-card">
+							<div class="wrap-el">
+								<button class="btn" type="submit">Искать друзей</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</header>
+	
+	<main class="mt3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+
+					<div class="blog-card">
+						<div class="img-wrap">
+							<img src="img/four1.jpg" alt="foto">
+						</div>
+						<ul class="details">
+							<li class="author"><a href="#">Lovelal.ua</a></li>
+							<li class="date">Aug. 24, 2015</li>
+							<li class="tags">
+								<ul>
+									<li><a href="#">Learn</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="description">
+							<h2>Learning to Code</h2>
+							<h3>Opening a door to the future</h3>
+							<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>	
+
+					<div class="blog-card">
+						<div class="img-wrap">
+							<img src="img/four2.jpg" alt="foto">
+						</div>
+						<ul class="details">
+							<li class="author"><a href="#">Lovelal.ua</a></li>
+							<li class="date">Aug. 24, 2015</li>
+							<li class="tags">
+								<ul>
+									<li><a href="#">Learn</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="description">
+							<h2>Learning to Code</h2>
+							<h3>Opening a door to the future</h3>
+							<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>	
+
+					<div class="blog-card">
+						<div class="img-wrap">
+							<img src="img/four3.jpg" alt="foto">
+						</div>
+						<ul class="details">
+							<li class="author"><a href="#">Lovelal.ua</a></li>
+							<li class="date">Aug. 24, 2015</li>
+							<li class="tags">
+								<ul>
+									<li><a href="#">Learn</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="description">
+							<h2>Learning to Code</h2>
+							<h3>Opening a door to the future</h3>
+							<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>	
+
+					<div class="blog-card">
+						<div class="img-wrap">
+							<img src="img/four4.jpg" alt="foto">
+						</div>
+						<ul class="details">
+							<li class="author"><a href="#">Lovelal.ua</a></li>
+							<li class="date">Aug. 24, 2015</li>
+							<li class="tags">
+								<ul>
+									<li><a href="#">Learn</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="description">
+							<h2>Learning to Code</h2>
+							<h3>Opening a door to the future</h3>
+							<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>	
+
+					<div class="blog-card">
+						<div class="img-wrap">
+							<img src="img/four5.jpg" alt="foto">
+						</div>
+						<ul class="details">
+							<li class="author"><a href="#">Lovelal.ua</a></li>
+							<li class="date">Aug. 24, 2015</li>
+							<li class="tags">
+								<ul>
+									<li><a href="#">Learn</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="description">
+							<h2>Learning to Code</h2>
+							<h3>Opening a door to the future</h3>
+							<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>	
+
+					<div class="blog-card">
+						<div class="img-wrap">
+							<img src="img/four6.jpg" alt="foto">
+						</div>
+						<ul class="details">
+							<li class="author"><a href="#">Lovelal.ua</a></li>
+							<li class="date">Aug. 24, 2015</li>
+							<li class="tags">
+								<ul>
+									<li><a href="#">Learn</a></li>
+									<li><a href="#">Code</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">CSS</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="description">
+							<h2>Learning to Code</h2>
+							<h3>Opening a door to the future</h3>
+							<p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>	
+					
+					<div class="pagination light">
+						<ul class="pagination">
+							<li class="control">
+								<a href="#"><i class="fa fa-angle-left"></i></a>
+							</li>
+							<li class="active">
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li class="control">
+								<a href="#"><i class="fa fa-angle-right"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<aside>
+						
+					</aside>
+				</div>
+			</div>
+		</div>
+	</main>
+
+<footer>
+	<div class="bottom-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="logo">
+						<a href="/">
+							<img src="img/logo.png" alt="lovelal">
+						</a>
+						<a href="#">
+							Уникальная социальная площадка для людей, которым не подходят обычные сайты знакомств
+						</a>							
+					</div>
+				</div>
+				<div class="col-md-6">
+					<ul class="nav">			 	
+						<li><a href="#">Знакомства</a></li>
+						<li><a href="#">Полезно</a></li>
+						<li><a href="#">Статьи</a></li>
+						<li><a href="#">О проекте</a></li>
+					</ul>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div class="copy">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					© <a href="http://lovelal.com/">lovelal.com</a>
+				</div>
+				<div class="col-md-3 center">
+					<a href="#">Политика конфиденциальности</a>
+				</div>
+				<div class="col-md-3 center">
+					<a href="sitemap.xml"><i class="fa fa-sitemap"></i> Sitemap</a>
+				</div>
+				<div class="col-md-3">
+					<div class="dev">
+						<a href="http://tsumbaluk.in.ua/" target="_blank" rel="nofollow">
+							Developed by
+							<span>Alexander Tsymbalyuk</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Load Scripts Start -->
+	<script src="js/jquery-2.2.0.min.js"></script>
+	<script src="js/plagin.min.js"></script>
+	<script src="js/common.min.js"></script>
+	<!-- Load Scripts End -->
+
+</body>
+</html>

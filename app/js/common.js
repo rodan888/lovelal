@@ -163,7 +163,9 @@ $(function() {
 			});
 
 			//Packery grid
-			this.opt.grid.packery();
+			if (this.opt.grid.length) {
+				this.opt.grid.packery();
+			};
 
 			// myPopup
 			this.popup();
