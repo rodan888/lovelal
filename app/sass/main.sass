@@ -27,6 +27,8 @@ body textarea:required:valid
 	color: #666
 
 //Custom Styles Here
+
+
 .title
 	font-family: 'RobotoRegular'
 	font-weight: 100
@@ -506,8 +508,49 @@ body textarea:required:valid
 			background-repeat: no-repeat
 			z-index: -1
 
+//Page register authoriz start
+.form-wrap
+	max-width: 600px
+	margin: 60px auto 30px
+	padding: 8px 10px
+	box-shadow: 0 0 6px $gray
+	text-align: center
+	@include border-radius(6px)
+	.wrap
+		padding: 20px
+	.label
+		display: block
+		margin-bottom: 30px
+	form
+		.form-group
+			margin-bottom: 20px
+			.label
+				margin-bottom: 0				
+		input,button,label
+			height: 49px!important
+			line-height: 49px!important
 
-
+	h3,h4
+		font-family: 'RobotoRegular'
+		font-weight: 100
+	.google-authorize
+		font-size: 22px
+		width: 80px
+		text-align: center
+		color: $white
+		background-color: $mainR
+		display: inline-block
+		padding: 7px 20px
+		border: 1px solid $mainR
+		@include border-radius(6px)
+		@include transition(all 0.3s)
+		&:hover
+			background-color: $white
+			color: $mainR
+	.wrap.left
+		h4
+			line-height: 49px
+//Page register authoriz end
 
 
 

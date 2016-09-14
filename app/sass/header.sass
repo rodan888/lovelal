@@ -83,10 +83,32 @@ body
 	color: $textColor
 	text-align: left
 	margin-bottom: 5px
+.error
+	font-size: 12px
+	color: $mainR
+	padding: 10px 0
+	border-bottom: 1px solid $gray
 a
 	&:hover
 		text-decoration: none
 		color: $black
+	&.link
+		position: relative
+		display: inline-block
+		vertical-align: top
+		font-size: 14px
+		color: $mainB
+		&:before
+			position: absolute
+			content: ''
+			bottom: 0
+			left: 0
+			width: 0
+			height: 1px
+			background-color: $mainB
+			@include transition(width 0.3s)
+		&:hover:before
+			width: 100%
 
 .img-wrap
 	position: relative
@@ -167,7 +189,7 @@ nav.navigation
 			a
 				display: block
 				font-size: 16px
-				line-height: 45px
+				line-height: 49px
 				padding: 0 15px
 				color: $black				
 				position: relative
@@ -188,7 +210,7 @@ nav.navigation
 		text-align: right
 		button
 			font-size: 16px
-			line-height: 45px
+			line-height: 49px
 			padding: 0 15px
 			color: $black				
 			position: relative
@@ -233,12 +255,12 @@ nav.navigation
 		font-size: 0
 		li
 			display: inline-block			
-			position: relative
-			&:first-child
-				&:before
-					@extend %extend_first
+			position: relative			
+			&:before
+				@extend %extend_first
 			&:last-child
-				&:before
+				&:after
+					left: initial
 					@extend %extend_before
 			a
 				font-size: 16px
@@ -249,6 +271,22 @@ nav.navigation
 				transition: all 0.3s
 				color: $black
 				position: relative
+				&.message
+					font-size: 22px
+					&:before
+						position: absolute
+						content: attr(data-count)						
+						top: 16px
+						right: 42px
+						width: 20px
+						height: 20px
+						font-size: 12px
+						background-color: $mainR
+						color: $white
+						text-align: center
+						line-height: 20px
+						box-shadow: 0 2px 3px $gray
+						@include border-radius(50%)
 				&:after
 					position: absolute
 					content: ''

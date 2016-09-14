@@ -198,9 +198,11 @@ $(function() {
 	};
 	main.init();
 
-	$('.btn.crop').on('click', function(){
-		imageCropper.init();
-	});
+	// if ($('.btn.crop').length) {
+		$('.btn.crop').on('click', function(){
+			imageCropper.init();
+		});		
+	// };
 	
 	// $("form").submit(function() {
 	// 	var th = $(this);
@@ -216,17 +218,6 @@ $(function() {
 	// 	});
 	// 	return false;
 	// });
-
-	
-
-
-
-	//SVG Fallback
-	if(!Modernizr.svg) {
-		$("img[src*='svg']").attr("src", function() {
-			return $(this).attr("src").replace(".svg", ".png");
-		});
-	};
 	
 	
 	try {
