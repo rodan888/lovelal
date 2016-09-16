@@ -249,9 +249,82 @@ body textarea:required:valid
 					min-width: 100px
 				a:hover
 					text-decoration: underline
+// message page item start
+.message-card
+	background: $white
+	box-shadow: 0 0 6px $gray
+	margin: 0 auto 20px
+	overflow: hidden
+	position: relative
+	font-size: 14px
+	min-height: 100px
+	line-height: 1.45em	
+	padding-left: 100px
+	@include border-radius(3px)
+	@include transition(height 0.3s)
+	.img-wrap
+		width: 80px
+		height: 80px
+		position: absolute
+		top: 10px
+		left: 10px
+		@include border-radius(50%)
+		img
+			max-width: 100px
+	.details
+		position: absolute
+		top: 10px
+		right: 10px
+		li
+			display: inline-block
+			vertical-align: top	
+			margin-bottom: 0
+			padding-top: 0
+			&:first-child
+				padding-right: 5px
+			&:last-child
+				padding-left: 5px
+				border-left: 1px solid $gray
+	.description 
+		padding: 10px
+		box-sizing: border-box
+		position: relative
+		h2
+			font-weight: 100
+			font-family: 'RobotoRegular'
+			color: $black
+			line-height: 1em
+			margin: 0 0 10px 0
+			position: relative
+			&:after 
+				content: ""
+				background: $mainR
+				height: 3px
+				width: 40px				
+				position: absolute
+				top: 25px
+				left: 0
+		p
+			margin-bottom: 0
+			max-width: 500px
+		a 
+			color: $mainR
+			margin-bottom: 10px
+			float: right
+			&:after 				
+				content: "\f061"
+				font-family: FontAwesome
+				margin-left: -10px
+				opacity: 0
+				vertical-align: middle
+				@include transition(all 0.3s)
+			&:hover:after 
+				margin-left: 5px
+				opacity: 1
+// message page item end
 
 //blog card start
-.blog-card 
+.blog-card
 	background: $white
 	box-shadow: 0 0 6px $gray
 	margin: 0 auto 20px

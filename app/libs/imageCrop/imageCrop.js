@@ -1,6 +1,6 @@
  var imageCropper = {
 
-        ctx: document.getElementById("panel").getContext("2d"),
+        ctx: '',
 
         image: new Image(),
 
@@ -20,12 +20,19 @@
 
         windowWidth: 300,
 
+        cnv: function(){
+            if ($('#panel').length) {
+                imageCropper.ctx = document.getElementById("panel").getContext("2d");                
+            }
+        }, 
+
         init: function() {  
-            console.log('crop-init line 24');
+            this.cnv();
             this.image.src = $('#panel').data('img');
             this.image.onload = this.onImageLoad.bind(this);
             document.getElementById("cropImgButtn").onclick = this.showCropedImage.bind(this);
             document.getElementById("scaleSlider").oninput = this.updateScale.bind(this);
+            console.log(this.ctx);
         },
 
         /**
