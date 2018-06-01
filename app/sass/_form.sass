@@ -78,7 +78,8 @@ form
 		transform: translateZ(0) translateY(-100%)
 	
 	
-	input[type="checkbox"], input[type="radio"] 
+
+	input[type="checkbox"] //,input[type="radio"]
 		position: absolute
 		overflow: hidden
 		clip: rect(0 0 0 0)
@@ -87,39 +88,39 @@ form
 		margin: -1px
 		padding: 0
 	
-	
-	input[type="radio"] + label 
-		position: relative
-		display: inline-block
-		overflow: hidden
-		text-indent: -9999px
-		background: $gray
-		width: 20px
-		height: 20px
-		border-radius: 100%
-		cursor: pointer
-		transition: all 0.3s $custom-easing
-		&:before 
-			content: ''
-			position: absolute
-			display: block
-			height: 8px
-			width: 8px
-			top: 50%
-			left: 50%
-			background: white
-			border-radius: 100%
-			box-shadow: 0 0 2px 2px rgba(0,0,0,0.1)
-			transition: all 0.3s $custom-easing 0.1s
-			transform: translateZ(0) translate(-50%, -50%) scale(0)
-		
-	
-	
-	input[type="radio"]:checked + label 
-		background: $mainR
-		&:before 
-			transform: translateZ(0) translate(-50%, -50%) scale(1)
-		
+
+	//input[type="radio"] + label
+	//	position: relative
+	//	display: inline-block
+	//	overflow: hidden
+	//	text-indent: -9999px
+	//	background: $gray
+	//	width: 20px
+	//	height: 20px
+	//	border-radius: 100%
+	//	cursor: pointer
+	//	transition: all 0.3s $custom-easing
+	//	&:before
+	//		content: ''
+	//		position: absolute
+	//		display: block
+	//		height: 8px
+	//		width: 8px
+	//		top: 50%
+	//		left: 50%
+	//		background: white
+	//		border-radius: 100%
+	//		box-shadow: 0 0 2px 2px rgba(0,0,0,0.1)
+	//		transition: all 0.3s $custom-easing 0.1s
+	//		transform: translateZ(0) translate(-50%, -50%) scale(0)
+	//
+	//
+	//
+	//input[type="radio"]:checked + label
+	//	background: $mainR
+	//	&:before
+	//		transform: translateZ(0) translate(-50%, -50%) scale(1)
+	//
 	
 	
 	input[type="checkbox"] + label 

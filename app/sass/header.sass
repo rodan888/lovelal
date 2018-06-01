@@ -365,7 +365,56 @@ nav.navigation
 			margin: 0 1% 0 0
 			h3
 				margin-top: 8px
-	
+
+.filters
+	background-color: $white
+	min-height: 150px
+	//position: absolute
+	top: 146px
+	left: 0
+	width: 100%
+	//opacity: 0
+	transition: all 0.5s
+	height: 300px
+	padding: 15px 0
+	//box-shadow: 0px 2px 2px $gray
+	&.active
+		top: 80px
+		opacity: 1
+		height: 250px
+		z-index: 100
+		position: fixed
+	.container
+		position: relative
+		.close
+			position: absolute
+			top: 2px
+			right: 15px
+			width: 20px
+			height: 20px
+			color: $mainR
+			text-align: center
+			font-size: 24px
+			line-height: 20px
+			cursor: pointer
+	label
+		color: $textColor
+	.form-group
+		span
+			color: $textColor
+			line-height: 20px
+			margin-left: 10px
+			display: inline-block
+			vertical-align: top
+			font-size: 14px
+	.col-md-3
+		width: 24%
+		padding: 0 10px
+		min-height: 220px
+		margin: 0 1% 0 0
+		h3
+			margin-top: 8px
+
 .form-card
 	text-align: center
 	width: 270px
